@@ -30,10 +30,10 @@ namespace TechJobs6Persistent.Controllers
             return View(jobs);
         }
 
-        public IActionResult Add(AddJobViewModel addJobViewModel)
+        public IActionResult Add()
         {
             List<Employer> employers = context.Employers.ToList();
-
+            AddJobViewModel addJobViewModel = new AddJobViewModel();
             addJobViewModel.Employers = new List<SelectListItem>();
 
             foreach (Employer employer in employers)
@@ -50,7 +50,7 @@ namespace TechJobs6Persistent.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessAddJobForm()
+        public IActionResult Add(AddJobViewModel addJobViewModel)
         {
             return View();
         }

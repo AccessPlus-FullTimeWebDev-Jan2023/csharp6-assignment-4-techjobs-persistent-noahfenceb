@@ -1,5 +1,5 @@
 ﻿@using TechJobs6Persistent.ViewModels
-@model TechJobs6Persistent.ViewModels.JobDetailViewModel
+@model TechJobs6Persistent.ViewModels.AddJobViewModel
 
 
 
@@ -12,15 +12,18 @@
         <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
-        <label>Employer</label>
-        <select class="form-control" asp-for="Employers" asp-items="Model.Employers">
-            @foreach (var employer in Model.Employers)
-            {
-                <option value="@employer.Value">@employer.Text</option>
-            }
-        </select>
+        <label asp-for="Employers">Employer</label>
+        <select asp-for="Employers" asp-items="Model.Employers"></select>
+        @*<select name="Color">
+            <option value="red">Red</option>
+        </select>*@
     </div>
-    <br />
 
+    <div class="form-group">
+        <label>Add New Employer</label>
+        <a asp-controller="Employer" asp-action="Create" class="btn btn-outline-primary">Add Employer</a>
+    </div>
+
+    <br />
     <input type="submit" value="Add Job" />
 </form>
