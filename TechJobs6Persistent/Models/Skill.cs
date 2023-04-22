@@ -16,7 +16,7 @@ namespace TechJobs6Persistent.Models
         public Skill(string name)
         {
             SkillName = name;
-            Jobs = new List<Job>();
+            //Jobs = new List<Job>();
         }
 
         public Skill()

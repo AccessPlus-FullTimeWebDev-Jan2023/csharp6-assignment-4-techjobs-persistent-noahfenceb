@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TechJobs6Persistent.Models;
 
 namespace TechJobs6Persistent.ViewModels
@@ -10,6 +11,7 @@ namespace TechJobs6Persistent.ViewModels
         public string Name { get; set; }
         public string EmployerName { get; set; }
         public string SkillText { get; set; }
+        public List<SelectListItem> Employers { get; set; }
 
         public JobDetailViewModel(Job theJob)
         {
